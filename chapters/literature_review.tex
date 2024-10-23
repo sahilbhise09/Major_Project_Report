@@ -1,20 +1,26 @@
 \chapter{Literature Review}
 
 \section{Survey of Existing system} 
-\blindtext \cite{doe2021impact}  % remove when adding actual content
+Several innovative deepfake detection models have emerged, each contributing unique solutions. Omar Al-Dulaimi and Sefer Kurnaz (2024) introduced a hybrid CNN-LSTM model combined with machine learning classifiers like Random Forest and SVM, achieving high accuracy on datasets like iFakeFaceDB and CelebASpoof. Jiachen Yang et al. (2021) developed MTD-Net, which employed Central Difference Convolution (CDC) and Atrous Spatial Pyramid Pooling (ASPP) to handle multi-scale textures, excelling on low-quality images.
+
+\noindent Yuval Nirkin et al. (2021) proposed a face-context discrepancy method, detecting inconsistencies between the face and its surroundings, performing well on benchmarks like Celeb-DFv2 and DFDC. Sai Ashrith Aduwala et al. (2021) introduced an ensemble GAN discriminator method, though it struggled with dataset generalization. Yogesh Patel and Sudeep Tanwar (2023) created a dense CNN architecture that performed effectively on low-resolution deepfakes.
+
+\noindent Fadwa Alrowais and Asma Abbas Hassan (2024) presented the DF4D-GGAN model, using EfficientNet-b4 and ShuffleNet, achieving over 91\% accuracy. In contrast, Dr. J.N. Singh et al. (2023) combined CNN and MesoNet for deepfake detection but faced generalization challenges. Lastly, Alben Richards MJ et al. (2023) trained a CNN on the Flickr-140k dataset, achieving high accuracy, further advancing deepfake detection techniques.
 
 \section{Limitation of Existing system or research gap }
-\blindtext 
+Despite advancements in deepfake detection, current systems face notable limitations. Many models, like the CNN-LSTM hybrid, perform well on specific datasets but struggle with generalization, as seen with accuracy drops from 96\% on iFakeFaceDB to 52\% on FaceForensics++. While methods like MTD-Net handle low-quality images, others, such as Dense CNN, require improvements for high-quality deepfakes. GAN-based discriminators and MesoNet architectures often fail to detect new deepfake techniques, requiring frequent retraining. High computational costs, as seen in DF4D-GGAN, limit real-time and large-scale use. These challenges highlight the need for more adaptable, efficient, and scalable solutions.
 
 \section{Problem Statement and Objectives }
 \subsection*{Problem Statement}
-\blindtext
+Deepfake technology significantly undermines the trustworthiness of digital media by enabling the creation of realistic but manipulated content, posing serious threats such as misinformation, identity fraud, and security breaches. This highlights the urgent need for effective detection mechanisms to protect the integrity of visual information. Current methods often rely on conventional algorithms or single-classifier models, which may not adequately address the diverse and evolving techniques used in deepfake creation. This project proposes an innovative solution that combines a Multi-Scale Hybrid CNN-Transformer Architecture with a Dynamic Classifier Selection strategy, aiming to enhance detection accuracy by employing multiple classifiers tailored to specific image features and manipulation types, ensuring robust performance across various deepfake scenarios.
 
 \subsection*{Objectives}
 \begin{itemize}
-    \item Objective 1
-    \item Objective 2
+    \item Develop a multi-scale hybrid architecture combining Convolutional Neural Networks (CNNs) and Vision Transformers (ViTs) for deepfake detection, effectively capturing both local and global features.
+    \item This project enhances deepfake detection using Atrous Spatial Pyramid Pooling (ASPP) for multi-scale texture feature extraction and a dynamic classifier selection approach in an ensemble system to identify the most suitable classifier for each input image.
+    \item Improve interpretability of the detection process through the use of attention heatmaps, enabling the identification of regions of interest and providing insights into why certain areas of the image were flagged as manipulated.
+    \item Achieve high accuracy in detecting a wide range of manipulations in images, including deepfakes with minimal distortions, through the combination of CNNs for local irregularities and ViTs for global inconsistencies.
 \end{itemize}
 
 \section{Scope}
-\blindtext
+The scope of this study focuses on developing a deepfake detection system for real-world applications by enhancing existing architectures (e.g., CNNs, LSTMs, GAN discriminators) with hybrid methods like multi-scale feature extraction and attention mechanisms. The model will be evaluated on various datasets, including FaceForensics++, iFakeFaceDB, DFDC, and Celeb-DF, to ensure adaptability. It aims for real-time detection in environments such as live streaming and social media, efficiently handling large-scale data for cloud deployment. Additionally, it will detect new manipulation techniques beyond face swaps, including full-body deepfakes and voice cloning, contributing significantly to combating deepfake misuse in today’s digital landscape.
